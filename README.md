@@ -2,7 +2,7 @@
 
 Simple app to control IoT devices from your computer.
 
-## Suportted Devices
+## Supported Devices
 
 - smart plug with tasmota firmware
 - smart switch with tasmota firmware
