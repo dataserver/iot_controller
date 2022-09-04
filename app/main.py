@@ -201,7 +201,6 @@ class YeelightWindow:
         self.frame.pack(fill="both", expand=1)
 
         self.primary.bind("<Escape>", self.window_close)
-        self.primary.bind("<FocusOut>", self.window_close)
 
         self.window_center()
         self.get_bulb_props()
