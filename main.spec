@@ -9,8 +9,8 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
-        ("app/iot_devices.json", "."),
-        ("app/resources", "resources")
+        ("app/resources", "resources"),
+        ("app/iot_devices.json", ".")
         ],
     hiddenimports=[],
     hookspath=[],

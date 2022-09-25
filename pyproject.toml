@@ -9,6 +9,7 @@ python = ">=3.8.5,<=3.10.5"
 ttkbootstrap = "^1.9.0"
 yeelight = "^0.7.10"
 requests = "^2.28.1"
+pydantic = "^1.10.2"
 
 [tool.poetry.dev-dependencies]
 black = "^22.6.0"
