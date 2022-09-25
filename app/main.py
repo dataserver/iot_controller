@@ -156,7 +156,7 @@ class MainWindow:
 
     def tasmota_smart_plug_toogle(self, ip: str, confirm: bool = False) -> bool:
         query_string = "cmnd=Power%20Toggle"
-        answer = True if confirm is False else self.dialog_confirm()
+        answer = True if not confirm else self.dialog_confirm()
         if answer:
             try:
                 url = f"http://{ip}/cm?{query_string}"
@@ -175,7 +175,7 @@ class MainWindow:
         return False
 
     def yeelight_toggle(self, ip: str, confirm: bool = False) -> bool:
-        answer = True if confirm is False else self.dialog_confirm()
+        answer = True if not confirm else self.dialog_confirm()
         if answer:
             try:
                 bulb = Bulb(ip=ip)
@@ -349,7 +349,7 @@ class TasmotaLightWindow:
         for widgets in self.frame_rgb_or_ct.winfo_children():
             widgets.destroy()
         #  White/CT widgets
-        if self.using_rgb_channels is False:
+        if not self.using_rgb_channels:
             # row 0
             l = ttk.Label(self.frame_rgb_or_ct, text="Color Temperature")
             l.grid(column=0, row=0, columnspan=2, sticky="ew", padx=5, pady=5)
@@ -460,7 +460,7 @@ class TasmotaLightWindow:
                 self.using_rgb_channels = True
 
     def change_dimmer(self, value) -> None:
-        if self.is_on and self.dimmer_cmd_disabled is False:
+        if self.is_on and not self.dimmer_cmd_disabled:
             try:
                 # 0..100 = set dimmer value from 0 to 100%
                 dv = round(SLIDER_DIMMER_MULTIPLIER * self.input_dimmer_var.get())
@@ -474,7 +474,7 @@ class TasmotaLightWindow:
                 )
 
     def change_ct(self, value) -> None:
-        if self.is_on and self.ct_cmd_disabled is False:
+        if self.is_on and not self.ct_cmd_disabled:
             try:
                 # set CT value from 153 to 500
                 dv = round(SLIDER_CT_MULTIPLIER * self.input_ct_var.get())
