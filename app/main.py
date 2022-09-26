@@ -163,7 +163,7 @@ class MainWindow:
                 r = requests.get(url=url, timeout=3, verify=False)
                 if r.status_code == 200:
                     j = r.json()
-                    if "POWER" in j:
+                    if j.get("POWER") is not None:
                         return True
                     else:
                         return False
@@ -455,7 +455,7 @@ class TasmotaLightWindow:
 
     def get_device_state(self) -> None:
         self.send_cmd(cmnd="STATE")
-        if "HSBColor" in self.curr_state:
+        if self.curr_state.get("HSBColor") is None:
             if self.curr_state["HSBColor"] != "0,0,0":
                 self.using_rgb_channels = True
 
