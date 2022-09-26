@@ -455,9 +455,11 @@ class TasmotaLightWindow:
 
     def get_device_state(self) -> None:
         self.send_cmd(cmnd="STATE")
-        if self.curr_state.get("HSBColor") is None:
-            if self.curr_state["HSBColor"] != "0,0,0":
-                self.using_rgb_channels = True
+        if (
+            self.curr_state.get("HSBColor") is not None
+            and self.curr_state.get("HSBColor") != "0,0,0"
+        ):
+            self.using_rgb_channels = True
 
     def change_dimmer(self, value) -> None:
         if self.is_on and not self.dimmer_cmd_disabled:
