@@ -79,10 +79,10 @@ yarn-error.log*
 .venv/
 .vscode/
 __pycache__/
-dist/
-build/
+run.bat
 .style.yapf
 workspace.code-workspace
 test.py
+dist/
+build/
 poetry.lock
-*.bat
