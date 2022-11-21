@@ -1,0 +1,42 @@
+{
+    "iot": {
+        "devices": [
+            {
+                "type": "tasmota-plug",
+                "name": "Smart Plug - computer",
+                "ip": "192.168.15.41",
+                "confirm": false
+            },
+            {
+                "type": "tasmota-plug",
+                "name": "Smart Plug - bedroom",
+                "ip": "192.168.15.42",
+                "confirm": false
+            },
+            {
+                "type": "tasmota-light-RGBCCT",
+                "name": "Smart Light Bulb - tasmota 1",
+                "ip": "192.168.15.44",
+                "confirm": false
+            },
+            {
+                "type": "tasmota-light-RGBCCT",
+                "name": "Smart Light Bulb - tasmota 2",
+                "ip": "192.168.15.45",
+                "confirm": false
+            },
+            {
+                "type": "tasmota-switch",
+                "name": "Smart Switch - Raspberry Red",
+                "ip": "192.168.15.43",
+                "confirm": true
+            },
+            {
+                "type": "yeelight-bulb",
+                "name": "Smart Light Bulb - computer",
+                "ip": "192.168.15.40",
+                "confirm": false
+            }
+        ]
+    }
+}
